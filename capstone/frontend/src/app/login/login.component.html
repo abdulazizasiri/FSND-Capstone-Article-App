@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="justify-content-center">
+
+    <div *ngIf="!auth.token">
+      <a class="btn nav-item text-white  rounded-pill nav-link bg-dark" [href]="loginURL">Log In</a>
+    </div>
+    <div *ngIf="auth.token">
+      <button class="btn nav-item text-white  rounded-pill nav-link bg-dark" (click)="auth.logout()">Log Out</button>
+          <div>
+
+            <textarea rows="8" cols="100" [(ngModel)]="auth.token" name="Active JWT"></textarea>
+          </div>
+    </div>
+
+  </div>
+</div>

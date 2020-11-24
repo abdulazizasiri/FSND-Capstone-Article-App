@@ -1,0 +1,58 @@
+<div>
+<div id= "navs" class="row justify-content-end">
+
+
+</div>
+</div>
+
+    {{name.className }}
+      <div class="wrapper float-center">
+    <form #articleForm="ngForm" novalidate (ngSubmit) = "onSubmiit()">
+  <!-- {{articleForm.value | json}}
+  {{articleModel | json }} -->
+
+
+
+<div class="container">
+  <fieldset class="form-group">
+    <div class="form-group">
+
+      <label for="posttitle"> Article Title </label>
+      <input [class.is-invalid]="name.invalid" required #name="ngModel" [(ngModel)] = "articleModel.title" class="form-control" type="text" id="posttitle" name = "title" placeholder="Title " >
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="postimage"> Article Image </label>
+      <input [(ngModel)] = "articleModel.image" class="form-control" type="text" id="postimage" name = "image" placeholder="image as link" >
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="isupdated; else undisabled" >
+        <label for="category"> Category </label>
+        <input [disabled]="true" [(ngModel)] = "articleModel.category"  class="form-control" type="text" id="category" name = "category" placeholder="Category of the Article" >
+      </div>
+
+      <ng-template #undisabled>
+
+        <label for="category"> Category </label>
+        <input [(ngModel)] = "articleModel.category"  class="form-control" type="text" id="category" name = "category" placeholder="Category of the Article" >
+      </ng-template>
+
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1"> Article Body</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name = "article" [(ngModel)] = "articleModel.contet" ></textarea >
+  </div>
+
+  </fieldset>
+  <div *ngIf="isupdated; else update">
+    <button  (click) = "updateArticle()" id="update_article"  type="button" class="float-right"  class="btn btn-dark" >Update article</button>
+</div>
+<ng-template #update>
+    <button id="new_article" type="submit" class="btn btn-success" > Publish </button>
+</ng-template>
+  </div>
+
+</form>

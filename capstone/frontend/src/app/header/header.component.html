@@ -1,0 +1,17 @@
+<div [class] = "myclass" id="wrapper">
+
+ <div id="blog_name" class="display-4  text-white">
+   Blog
+ </div>
+<div id= "navs" class="row justify-content-end">
+  <nav class="nav">
+  <a href= "articles" class=" nav-item btn rounded-pill bg-white nav-link "> Articles </a>
+  <a href="categories" class="btn nav-item rounded-pill nav-link bg-white"> Categories</a>
+  <a href="login" class=" nav-item btn rounded-pill bg-white nav-link "> Get Started</a>
+</nav>
+</div>
+<div *ngIf="!isLoggedIn">
+<button (click)="postArticle()"  [disabled] = "!auth.can('post:articles')" (click)="postArticle()" [routerLink]="formUrl" class="btn  bg-dark text-white float-right"> Post Article</button>
+</div>
+</div>
+<router-outlet > </router-outlet>

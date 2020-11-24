@@ -1,0 +1,29 @@
+
+#wrapper {
+  width: 100%;
+  height: 150px;
+  background-color: #000000;
+
+}
+
+a {
+  margin-right: 30px;
+
+
+}
+
+#blog_name{
+
+  margin-left: 20px;
+  position: absolute;;
+}
+
+.post{
+  margin-right: 0px;
+    background-color: red;
+
+}
+
+/* .allblack {
+  background-color: black;
+} */

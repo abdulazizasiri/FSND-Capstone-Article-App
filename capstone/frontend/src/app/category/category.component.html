@@ -1,0 +1,6 @@
+<div class="container">
+
+  <div *ngFor=" let cat of categories">
+    <div class="h3" *ngFor="let category of cat.categories "> {{category.category_name | titlecase}}</div>
+  </div>
+</div>
